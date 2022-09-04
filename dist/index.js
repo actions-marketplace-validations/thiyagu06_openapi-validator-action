@@ -18157,8 +18157,8 @@ const dir = process.env.GITHUB_WORKSPACE || __dirname
 const fullPath = path.resolve(dir, filePath)
 console.log(`schema file full path:${fullPath}`)
 try {
-  const SwaggerParser = __nccwpck_require__(2980);
-  let api = await SwaggerParser.validate(fullPath, {continueOnError:true, validate:{spec: false}});
+  const SwaggerParser = __nccwpck_require__(2980)
+  let api = await SwaggerParser.validate(fullPath, {continueOnError:true})
   console.log("API specification is  valid ")
 }
 catch(err) {
@@ -18416,9 +18416,8 @@ const core = __nccwpck_require__(4247);
 const validate = __nccwpck_require__(282)
 
 try {
-  // const filePath = core.getInput('file-path');
-  const filePath = "openapiv3.yml"
-  console.log(`file path ${filePath}!`);
+  const filePath = core.getInput('filepath');
+  console.log(`file path ${filePath}`);
   validate(filePath)
 } catch (error) {
   core.setFailed(error.message);

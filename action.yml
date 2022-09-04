@@ -2,7 +2,7 @@ name: 'openapi-validator-action'
 author: 'Thiyagu GK'
 description: 'This action validates if the OpenAPI/Swagger schema file is valid or not.'
 inputs:
-  file-path:
+  filepath:
     description:  'Path of openapi schema file'
     required: true
     default: 'openapi.yaml'

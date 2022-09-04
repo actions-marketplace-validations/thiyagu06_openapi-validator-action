@@ -4,7 +4,7 @@ This action validates whether the OpenAPI/Swagger schema file is valid or not
 
 ## Inputs
 
-### `file-path`
+### `filepath`
 
 **Required** Path of the OpenAPI schema file. Default is `"openapi.yaml"` at root. Path starts root of github repo.
 For example, if your schema is in `schemas` folder.
@@ -17,13 +17,13 @@ root
 └── package-lock.json
 ```
 
-You should use `file_path: './schemas/file-path.yaml'`
+You should use `filepath: './schemas/openapi.yaml'`
 
 ## Example usage
 
 ```
 - name: 'validate openapi schema'
-  uses: thiyagu08/validate-github-action@v1
+  uses: thiyagu06/validate-github-action@v1
   with:
     filepath: 'openapi.yaml'
 ```

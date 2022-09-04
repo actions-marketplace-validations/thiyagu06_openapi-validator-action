@@ -10,8 +10,8 @@ const dir = process.env.GITHUB_WORKSPACE || __dirname
 const fullPath = path.resolve(dir, filePath)
 console.log(`schema file full path:${fullPath}`)
 try {
-  const SwaggerParser = require("@apidevtools/swagger-parser");
-  let api = await SwaggerParser.validate(fullPath, {continueOnError:true, validate:{spec: false}});
+  const SwaggerParser = require("@apidevtools/swagger-parser")
+  let api = await SwaggerParser.validate(fullPath, {continueOnError:true})
   console.log("API specification is  valid ")
 }
 catch(err) {
