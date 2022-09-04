@@ -1,24 +1,32 @@
 {
   "name": "hello-world-javascript-action",
   "version": "1.0.0",
-  "description": "This action prints \"Hello World\" or \"Hello\" + the name of a person to greet to the log.",
+  "description": "This action validate if the OpenAPI/Swagger schema file is valid or not.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint index.js",
+    "package": "ncc build index.js -o dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/hello-world-javascript-action.git"
+    "url": "git+https://github.com/thkamaraj/openapi-validator-action.git"
   },
-  "keywords": [],
+  "keywords": ["GitHub", "actions", "OpenAPI", "Swagger"],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/actions/hello-world-javascript-action/issues"
+    "url": "https://github.com/thkamaraj/openapi-validator-action/issues"
   },
-  "homepage": "https://github.com/actions/hello-world-javascript-action#readme",
+  "homepage": "https://github.com/thkamaraj/openapi-validator-action#readme",
   "dependencies": {
     "@actions/core": "^1.6.0",
-    "@actions/github": "^5.0.1"
+    "@actions/github": "^5.0.1",
+    "@apidevtools/swagger-parser": "^10.1.0"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.22.3",
+    "eslint": "^8.16.0",
+    "jest": "^28.1.0"
   }
 }

@@ -1,13 +1,14 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'openapi-validator-action'
+author: 'Thiyagu GK'
+description: 'This action validates if the OpenAPI/Swagger schema file is valid or not.'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  file-path:
+    description:  'Path of openapi schema file'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+    default: 'openapi.yaml'
 runs:
   using: 'node16'
-  main: 'index.js'
+  main: 'dist/index.js'
+branding:
+  icon: 'file-text'
+  color: 'blue'

@@ -1,23 +1,30 @@
-# Hello world JavaScript action
+# openapi-validator-action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log. To learn how this action was built, see "[Creating a JavaScript action](https://help.github.com/en/articles/creating-a-javascript-action)" in the GitHub Help documentation.
+This action validates whether the OpenAPI/Swagger schema file is valid or not
 
 ## Inputs
 
-### `who-to-greet`
+### `file-path`
 
-**Required** The name of the person to greet. Default `"World"`.
+**Required** Path of the OpenAPI schema file. Default is `"openapi.yaml"` at root. Path starts root of github repo.
+For example, if your schema is in `schemas` folder.
 
-## Outputs
+```
+root
+├── schemas
+│   └── openapi.yaml
+├── package.json
+└── package-lock.json
+```
 
-### `time`
-
-The time we greeted you.
+You should use `file_path: './schemas/file-path.yaml'`
 
 ## Example usage
 
-```yaml
-uses: actions/hello-world-javascript-action@main
-with:
-  who-to-greet: 'Mona the Octocat'
 ```
+- name: 'validate openapi schema'
+  uses: thiyagu08/validate-github-action@v1
+  with:
+    filepath: 'openapi.yaml'
+```
+You can specify version with `@v<release-version>`. It follows semantic release. For latest release, please check [releases](https://github.com/thiyagu06/openapi-validator-action/releases) page.
