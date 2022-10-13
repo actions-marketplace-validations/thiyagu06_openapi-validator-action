@@ -23,7 +23,7 @@ You should use `filepath: './schemas/openapi.yaml'`
 
 ```
 - name: 'validate openapi schema'
-  uses: thiyagu06/validate-github-action@v1
+  uses: thiyagu06/openapi-validator-action@v1
   with:
     filepath: 'openapi.yaml'
 ```
